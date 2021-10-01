@@ -1,0 +1,34 @@
+﻿@model List<ShortenerUrl.Entities.ShortenedUrl>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2>Enter your link below and get it shortened, nice and easy.</h2>
+    <div class="input-wrap">
+        <input type="text" name="url" id="urlshort" placeholder="Shorten your URL" /><button id="submit">Shorten</button>
+    </div>
+    <br />
+    <br />
+    <div class="resp-area inactive" id="resp-area">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Real Url</th>
+                    <th scope="col">ShortenedUrl</th>
+                    <th scope="col">Token</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.URL</td>
+                        <td>@item.ShortenedURL</td>
+                        <td>@item.Token</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
